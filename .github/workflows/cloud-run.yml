@@ -34,9 +34,7 @@ jobs:
     # Authorize GitHub to connect to your service account
     - uses: 'google-github-actions/auth@v2'
       with:
-        project_id: '${{ env.PROJECT_ID }}'
-        workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER}}'
-        service_account: '${{ env.SERVICE_ACCOUNT }}'
+        credentials_json: '${{ secrets.GCLOUD_CREDENTIALS }}'
     
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v2'
